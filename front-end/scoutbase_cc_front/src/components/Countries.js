@@ -24,10 +24,13 @@ export default function Countries() {
   if (error) return <p>Error :(</p>;
 
   return (
-    <div className="flex flex-wrap">
+    <div className="bg-near-black flex flex-wrap">
       {data.countries.map(({ name, code }) => (
-        <Link to={`/countries/${code}`} className="link grow ma5 outline">
-          <p>{name}</p>
+        <Link
+          to={`/countries/${code}`}
+          className="w4 ba3 b-yellow outline  bg-white black hover-white hover-bg-black link grow ma5 "
+        >
+          <p className="ma3">{name}</p>
         </Link>
       ))}
     </div>

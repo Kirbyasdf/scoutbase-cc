@@ -16,13 +16,15 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={WelcomePage} />
-          <Route exact path="/countries" component={Countries} />
-          <Route path="/countries/:code" component={Country} />
-        </Switch>
-      </Router>
+      <div className="bg-black">
+        <Router>
+          <Switch>
+            <Route exact path="/" component={WelcomePage} />
+            <Route exact path="/countries" component={Countries} />
+            <Route path="/countries/:code" component={Country} />
+          </Switch>
+        </Router>
+      </div>
     </ApolloProvider>
   );
 }

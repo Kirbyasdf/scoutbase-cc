@@ -23,5 +23,5 @@ export default function Country({ match }) {
 
   const { currency, phone } = data.country;
 
-  return <div>{currency + phone}</div>;
+  return <div className="bg-black white">{currency + phone}</div>;
 }
