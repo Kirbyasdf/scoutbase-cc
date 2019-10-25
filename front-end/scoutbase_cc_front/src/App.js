@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient, { gql } from "apollo-boost";
+import "./App.css";
 
 import "tachyons";
 
@@ -16,7 +17,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="bg-black">
+      <div className="vh-100 dt w-100 bg-dark-pink">
         <Router>
           <Switch>
             <Route exact path="/" component={WelcomePage} />
