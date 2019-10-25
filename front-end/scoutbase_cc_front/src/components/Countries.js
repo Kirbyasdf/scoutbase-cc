@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import { Link } from "react-router-dom";
@@ -26,7 +26,7 @@ export default function Countries() {
   return (
     <div className="flex flex-wrap">
       {data.countries.map(({ name, code }) => (
-        <Link to={`/countries/${code}`} className="grow ma5 outline" key={code}>
+        <Link to={`/countries/${code}`} className="link grow ma5 outline">
           <p>{name}</p>
         </Link>
       ))}

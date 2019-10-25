@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient, { gql } from "apollo-boost";
@@ -18,7 +18,8 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Switch>
-          <Route path="/countries" component={Countries} />
+          <Route exact path="/" component={WelcomePage} />
+          <Route exact path="/countries" component={Countries} />
           <Route path="/countries/:code" component={Country} />
         </Switch>
       </Router>
