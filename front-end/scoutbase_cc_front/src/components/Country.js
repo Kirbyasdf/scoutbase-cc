@@ -26,7 +26,7 @@ export default function Country({ match }) {
 
   return (
     <div className="vh-100 dt w-100 bg-black red tc bounce-in-bck">
-      <Link className="f1 link light-purple " to="/countries">
+      <Link className="f1 link light-purple text-focus-in" to="/countries">
         Go Back
       </Link>
 
