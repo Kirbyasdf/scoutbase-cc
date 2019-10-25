@@ -1,7 +1,27 @@
-import React, { useState, useEffect } from "react";
-import CountryCard from "../components/CountryCard.js";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useQuery } from "@apollo/react-hooks";
+import { gql } from "apollo-boost";
 
-export default function Country() {
-  return <div>this is a country</div>;
+const COUNTRY = gql`
+  query Country($code: String!) {
+    country(code: $code) {
+      name
+      currency
+      phone
+    }
+  }
+`;
+
+export default function Country({ match }) {
+  const code = match.params.code;
+  const { loading, error, data } = useQuery(COUNTRY, {
+    variables: { code }
+  });
+  if (loading) return null;
+  if (error) return `Error! ${error}`;
+
+  const { currency, phone } = data.country;
+
+  return <div className="bg-black white">{currency + phone}</div>;
 }
